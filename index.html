@@ -5,17 +5,42 @@
     <meta charset="UTF-8">
     <title>jQuery Template</title>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Karla|Roboto|Vollkorn" rel="stylesheet">
     <script>
         $(function(){
             
-            
+            $('button').click(function(){
+                var name = $('#name').val();
+                var company = $('#company').val();
+                var textcolor = $('#textcolor').val();
+                var fonts = $('input[name="fonts"]:checked').val();
+                var address = $('#address');
+                
+                
+            });
         });
         
     </script>
 </head>
 
 <body>
-
+    <div>    
+        Name: <input id="name"><br>
+        Company Name: <input id="company"><br>
+        Text Color: <input id="textcolor"><br>
+        Fonts: <input type="radio" name="fonts" value="Alegreya">Alegreya 
+            <input type="radio" name="fonts" value="Karla">Karla
+            <input type="radio" name="fonts" value="Roboto">Roboto
+            <input type="radio" name="fonts" value="Vollkorn">Vollkorn<br>
+        Address: <input id="address"><br><br>
+    
+    <button>Generate</button>
+    </div>
+    
+    <h1></h1>
+    <p></p>
+    
 </body>
 
 </html>
