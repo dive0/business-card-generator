@@ -8,39 +8,50 @@
     <link type="text/css" rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Karla|Roboto|Vollkorn" rel="stylesheet">
     <script>
-        $(function(){
-            
-            $('button').click(function(){
+        $(function() {
+
+            $('button').click(function() {
                 var name = $('#name').val();
                 var company = $('#company').val();
                 var textcolor = $('#textcolor').val();
                 var fonts = $('input[name="fonts"]:checked').val();
-                var address = $('#address');
-                
-                
+                var address = $('#address').val();
+                var profession = $('#profession').val();
+                var info = profession + '<br/>' + address;
+
+                $('#div1').slideUp(1000, function(){
+                    $('h1').html(company);
+                    $('h2').html(name);
+                    $('p').html(info);
+                    $('*').css({'color': textcolor, 'font-family': fonts});
+                    $('#div2').css('border', '10px');
+                });
             });
         });
-        
     </script>
 </head>
 
 <body>
-    <div>    
-        Name: <input id="name"><br>
-        Company Name: <input id="company"><br>
-        Text Color: <input id="textcolor"><br>
-        Fonts: <input type="radio" name="fonts" value="Alegreya">Alegreya 
+    <div id="div1">
+        Name: <input id="name"><br> 
+        Company Name: <input id="company"><br> 
+        Profession: <input id="profession"><br>
+        Address: <input id="address"><br>
+        Text Color: <input id="textcolor"><br> 
+        Fonts: <input type="radio" name="fonts" value="Alegreya">Alegreya
             <input type="radio" name="fonts" value="Karla">Karla
             <input type="radio" name="fonts" value="Roboto">Roboto
-            <input type="radio" name="fonts" value="Vollkorn">Vollkorn<br>
-        Address: <input id="address"><br><br>
-    
-    <button>Generate</button>
+            <input type="radio" name="fonts" value="Vollkorn">Vollkorn<br> 
+        
+
+        <button>Generate</button>
     </div>
-    
-    <h1></h1>
-    <p></p>
-    
+    <div id="div2">
+        <h1></h1>
+        <h2></h2>
+        <p></p>
+    </div>
+
 </body>
 
 </html>
