@@ -16,7 +16,7 @@
                 var fonts = $('input[name="fonts"]:checked').val();
                 var address = $('#address').val();
                 var profession = $('#profession').val();
-                var info = profession + '<br/>' + address;
+                var info = 'Profession: ' + profession + '<br/>' + 'Address: ' + address;
                 var backcolor = ['yellow', 'lightgreen', 'blue', 'lightred', 'grey', 'orange', 'white', 'purple'];
                 var phone = ['123-456-7890', '932-468-2197', '673-832-9828', '042-736-8237'];
                 function random_colors(backcolor) {
@@ -29,7 +29,7 @@
                 $('#div1').slideUp(1000, function(){
                     $('h1').html(company);
                     $('h2').html(name);
-                    $('h3').html(random_number(phone));
+                    $('h3').html('Phone: ' + random_number(phone));
                     $('h4').html(info);
                     $('*').css({'color': textcolor, 'font-family': fonts, 'background-color': random_colors(backcolor)});
                     $('#div2').css({'border-style': 'solid', 'border-color': 'black', 'width': '500px', 'margin': 'auto'});
