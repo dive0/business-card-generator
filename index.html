@@ -9,8 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Karla|Roboto|Vollkorn" rel="stylesheet">
     <script>
         $(function() {
-
-            $('button').click(function() {
+            $('#generate').click(function() {
                 var name = $('#name').val();
                 var company = $('#company').val();
                 var textcolor = $('#textcolor').val();
@@ -18,13 +17,22 @@
                 var address = $('#address').val();
                 var profession = $('#profession').val();
                 var info = profession + '<br/>' + address;
-
+                var backcolor = ['yellow', 'lightgreen', 'blue', 'lightred', 'grey', 'orange', 'white', 'purple'];
+                var phone = ['123-456-7890', '932-468-2197', '673-832-9828', '042-736-8237'];
+                function random_colors(backcolor) {
+                    return backcolor[Math.floor(Math.random()*backcolor.length)];
+                }
+                function random_number(phone) {
+                    return phone[Math.floor(Math.random()*phone.length)];
+                }
+                 
                 $('#div1').slideUp(1000, function(){
                     $('h1').html(company);
                     $('h2').html(name);
-                    $('p').html(info);
-                    $('*').css({'color': textcolor, 'font-family': fonts});
-                    $('#div2').css('border-style', 'solid');
+                    $('h3').html(random_number(phone));
+                    $('h4').html(info);
+                    $('*').css({'color': textcolor, 'font-family': fonts, 'background-color': random_colors(backcolor)});
+                    $('#div2').css({'border-style': 'solid', 'border-color': 'black', 'width': '500px', 'margin': 'auto'});
                 });
             });
         });
@@ -44,13 +52,15 @@
             <input type="radio" name="fonts" value="Vollkorn">Vollkorn<br> 
         
 
-        <button>Generate</button>
+        <button id="generate">Generate</button>
+        
     </div>
     <div id="div2">
         <h1></h1>
         <h2></h2>
-        <p></p>
-    </div>
+        <h3></h3>
+        <h4></h4>
+    </div><br>
 
 </body>
 
